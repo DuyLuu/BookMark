@@ -1,10 +1,10 @@
 import React from 'react';
 import Todos from './components/Todos'
 
-function App() {
+const App: React.FC = () => {
   return (
     <div>
-      <Todos />
+      <Todos items={['Learning English', 'Learning Codding', 'Clean the house']} />
     </div>
   );
 }
