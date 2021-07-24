@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import TodoItem from './TodoItem'
-import Todo from '../model/todo'
+import { TodoContext } from '../context/todoContext'
 
-const Todos: React.FC<{ items: Todo[] }> = (props) => {
+const Todos: React.FC = () => {
+    const { items } = useContext(TodoContext)
+
     return (
         <ul>
-            {props.items.map((item) => {
+            {items.map((item) => {
                 return <TodoItem key={item.id} value={item} />
             })}
         </ul>
